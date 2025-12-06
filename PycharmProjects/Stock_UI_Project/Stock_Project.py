@@ -18,12 +18,7 @@ SYMBOLS = {"Tesla": "TSLA", "Google": "GOOGL"}
 
 
 def fetch_history(symbol: str, period: str = "90d") -> pd.DataFrame:
-    """Fetch historical data for the symbol.
-    Returns a DataFrame with Date index.
-
-    Period can be like '30d', '90d', '1y', etc.
-    Uses yfinance.Ticker.history.
-    """
+    
     ticker = yf.Ticker(symbol)
     #print(ticker)
     hist = ticker.history(period=period, auto_adjust=False) #contains Open, High, Low, Close, Volume data
